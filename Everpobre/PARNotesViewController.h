@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PARNotesViewController.h
 //  Everpobre
 //
 //  Created by Pablo Parejo Camacho on 8/5/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PARNotesViewController : UITableViewController
 
 @end
-

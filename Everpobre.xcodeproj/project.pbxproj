@@ -10,12 +10,13 @@
 		21BFA96A1AFD0B5800898E8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9691AFD0B5800898E8E /* main.m */; };
 		21BFA96D1AFD0B5800898E8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA96C1AFD0B5800898E8E /* AppDelegate.m */; };
 		21BFA9701AFD0B5800898E8E /* Everpobre.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA96E1AFD0B5800898E8E /* Everpobre.xcdatamodeld */; };
-		21BFA9731AFD0B5800898E8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9721AFD0B5800898E8E /* ViewController.m */; };
 		21BFA9761AFD0B5800898E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BFA9741AFD0B5800898E8E /* Main.storyboard */; };
 		21BFA9781AFD0B5800898E8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21BFA9771AFD0B5800898E8E /* Images.xcassets */; };
 		21BFA97B1AFD0B5800898E8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BFA9791AFD0B5800898E8E /* LaunchScreen.xib */; };
 		21BFA9871AFD0B5800898E8E /* EverpobreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9861AFD0B5800898E8E /* EverpobreTests.m */; };
 		21BFA9921AFD0FC200898E8E /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9911AFD0FC200898E8E /* Note.m */; };
+		21BFA9961AFD213700898E8E /* PARNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9951AFD213700898E8E /* PARNotesViewController.m */; };
+		21BFA99A1AFD216800898E8E /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9991AFD216800898E8E /* CoreDataTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +36,6 @@
 		21BFA96B1AFD0B5800898E8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21BFA96C1AFD0B5800898E8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		21BFA96F1AFD0B5800898E8E /* Everpobre.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre.xcdatamodel; sourceTree = "<group>"; };
-		21BFA9711AFD0B5800898E8E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		21BFA9721AFD0B5800898E8E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		21BFA9751AFD0B5800898E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21BFA9771AFD0B5800898E8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		21BFA97A1AFD0B5800898E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -45,6 +44,10 @@
 		21BFA9861AFD0B5800898E8E /* EverpobreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverpobreTests.m; sourceTree = "<group>"; };
 		21BFA9901AFD0FC200898E8E /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		21BFA9911AFD0FC200898E8E /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		21BFA9941AFD213700898E8E /* PARNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARNotesViewController.h; sourceTree = "<group>"; };
+		21BFA9951AFD213700898E8E /* PARNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNotesViewController.m; sourceTree = "<group>"; };
+		21BFA9981AFD216800898E8E /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		21BFA9991AFD216800898E8E /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +91,9 @@
 			children = (
 				21BFA96B1AFD0B5800898E8E /* AppDelegate.h */,
 				21BFA96C1AFD0B5800898E8E /* AppDelegate.m */,
-				21BFA9711AFD0B5800898E8E /* ViewController.h */,
-				21BFA9721AFD0B5800898E8E /* ViewController.m */,
+				21BFA9981AFD216800898E8E /* CoreDataTableViewController.h */,
+				21BFA9991AFD216800898E8E /* CoreDataTableViewController.m */,
+				21BFA9971AFD213A00898E8E /* Controller */,
 				21BFA9931AFD0FD300898E8E /* Model */,
 				21BFA9741AFD0B5800898E8E /* Main.storyboard */,
 				21BFA9771AFD0B5800898E8E /* Images.xcassets */,
@@ -133,6 +137,15 @@
 				21BFA9911AFD0FC200898E8E /* Note.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		21BFA9971AFD213A00898E8E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21BFA9941AFD213700898E8E /* PARNotesViewController.h */,
+				21BFA9951AFD213700898E8E /* PARNotesViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +250,9 @@
 			files = (
 				21BFA9921AFD0FC200898E8E /* Note.m in Sources */,
 				21BFA96D1AFD0B5800898E8E /* AppDelegate.m in Sources */,
+				21BFA99A1AFD216800898E8E /* CoreDataTableViewController.m in Sources */,
+				21BFA9961AFD213700898E8E /* PARNotesViewController.m in Sources */,
 				21BFA96A1AFD0B5800898E8E /* main.m in Sources */,
-				21BFA9731AFD0B5800898E8E /* ViewController.m in Sources */,
 				21BFA9701AFD0B5800898E8E /* Everpobre.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
