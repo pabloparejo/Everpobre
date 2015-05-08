@@ -19,14 +19,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    Note *nota1 = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+    /*Note *nota1 = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
     
     nota1.title = @"Shopping List";
     nota1.text = @"One thing of this, another of that";
-    nota1.creationDate = [NSDate date];
-    NSLog(@"Note: %@", nota1);
+    nota1.creationDate = [NSDate date];*/
+    //[self saveContext];
     
-    [self saveContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
+    
+    NSArray *notes = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    NSLog(@"Array Notes is: %@", [notes class]);
+    
+    [notes enumerateObjectsUsingBlock:^(Note *note, NSUInteger idx, BOOL *stop) {
+        
+        NSLog(@"The title is: '%@' and the note: %@", note.title, note);
+    }];
+    
+
     
     return YES;
 }
