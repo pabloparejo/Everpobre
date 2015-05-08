@@ -17,6 +17,8 @@
 		21BFA9921AFD0FC200898E8E /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9911AFD0FC200898E8E /* Note.m */; };
 		21BFA9961AFD213700898E8E /* PARNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9951AFD213700898E8E /* PARNotesViewController.m */; };
 		21BFA99A1AFD216800898E8E /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9991AFD216800898E8E /* CoreDataTableViewController.m */; };
+		21BFA99D1AFD319A00898E8E /* PARNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA99C1AFD319A00898E8E /* PARNoteViewController.m */; };
+		21BFA9A01AFD34B300898E8E /* PARPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA99F1AFD34B300898E8E /* PARPhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		21BFA9951AFD213700898E8E /* PARNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNotesViewController.m; sourceTree = "<group>"; };
 		21BFA9981AFD216800898E8E /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		21BFA9991AFD216800898E8E /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		21BFA99B1AFD319A00898E8E /* PARNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARNoteViewController.h; sourceTree = "<group>"; };
+		21BFA99C1AFD319A00898E8E /* PARNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNoteViewController.m; sourceTree = "<group>"; };
+		21BFA99E1AFD34B300898E8E /* PARPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARPhotoViewController.h; sourceTree = "<group>"; };
+		21BFA99F1AFD34B300898E8E /* PARPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARPhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +148,12 @@
 		21BFA9971AFD213A00898E8E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				21BFA99B1AFD319A00898E8E /* PARNoteViewController.h */,
+				21BFA99C1AFD319A00898E8E /* PARNoteViewController.m */,
 				21BFA9941AFD213700898E8E /* PARNotesViewController.h */,
 				21BFA9951AFD213700898E8E /* PARNotesViewController.m */,
+				21BFA99E1AFD34B300898E8E /* PARPhotoViewController.h */,
+				21BFA99F1AFD34B300898E8E /* PARPhotoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -248,12 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BFA99D1AFD319A00898E8E /* PARNoteViewController.m in Sources */,
 				21BFA9921AFD0FC200898E8E /* Note.m in Sources */,
 				21BFA96D1AFD0B5800898E8E /* AppDelegate.m in Sources */,
 				21BFA99A1AFD216800898E8E /* CoreDataTableViewController.m in Sources */,
 				21BFA9961AFD213700898E8E /* PARNotesViewController.m in Sources */,
 				21BFA96A1AFD0B5800898E8E /* main.m in Sources */,
 				21BFA9701AFD0B5800898E8E /* Everpobre.xcdatamodeld in Sources */,
+				21BFA9A01AFD34B300898E8E /* PARPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
