@@ -16,4 +16,13 @@
 @dynamic text;
 @dynamic creationDate;
 
++ (instancetype) noteWithContext:(NSManagedObjectContext *)context title:(NSString *)title text:(NSString *)text{
+    Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
+    
+    note.title = title;
+    note.text = text;
+    note.creationDate = [NSDate date];
+    return note;
+}
+
 @end

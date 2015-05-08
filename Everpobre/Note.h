@@ -17,4 +17,6 @@
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSDate * creationDate;
 
++ (instancetype) noteWithContext:(NSManagedObjectContext *)context title:(NSString *)title text:(NSString *)text;
+
 @end
