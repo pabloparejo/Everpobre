@@ -13,12 +13,6 @@
 
 @implementation CoreDataTableViewController
 
-#pragma mark - Properties
-
-@synthesize fetchedResultsController = _fetchedResultsController;
-@synthesize suspendAutomaticTrackingOfChangesInManagedObjectContext = _suspendAutomaticTrackingOfChangesInManagedObjectContext;
-@synthesize debug = _debug;
-@synthesize beganUpdates = _beganUpdates;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -115,6 +109,8 @@
                 
             case NSFetchedResultsChangeDelete:
                 [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+                break;
+            default:
                 break;
         }
     }

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Note.h"
-
+#import "PARNotesViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,28 +19,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    /*Note *nota1 = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+    PARNotesViewController *notesVC = [((UINavigationController *)self.window.rootViewController).viewControllers firstObject];
     
-    nota1.title = @"Shopping List";
-    nota1.text = @"One thing of this, another of that";
-    nota1.creationDate = [NSDate date];*/
-    
-    // [Note noteWithContext:self.managedObjectContext title:@"Second Note" text:@"Niiiiice!"];
-    // [self saveContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
-    
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(Note.class)];
     request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO]];
-    request.predicate = [NSPredicate predicateWithFormat:@"creationDate < %@", [NSDate date]];
-
-    NSArray *notes = [self.managedObjectContext executeFetchRequest:request error:nil];
-    
-    NSLog(@"Array Notes is: %@", [notes class]);
-    
-    [notes enumerateObjectsUsingBlock:^(Note *note, NSUInteger idx, BOOL *stop) {
-        NSLog(@"The title is: '%@' and the note: %@", note.title, note);
-    }];
-    
-
+    notesVC.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                           managedObjectContext:self.managedObjectContext
+                                                                             sectionNameKeyPath:nil
+                                                                                      cacheName:nil];
     
     return YES;
 }
