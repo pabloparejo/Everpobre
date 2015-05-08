@@ -15,6 +15,7 @@
 		21BFA9781AFD0B5800898E8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21BFA9771AFD0B5800898E8E /* Images.xcassets */; };
 		21BFA97B1AFD0B5800898E8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BFA9791AFD0B5800898E8E /* LaunchScreen.xib */; };
 		21BFA9871AFD0B5800898E8E /* EverpobreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9861AFD0B5800898E8E /* EverpobreTests.m */; };
+		21BFA9921AFD0FC200898E8E /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9911AFD0FC200898E8E /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		21BFA9801AFD0B5800898E8E /* EverpobreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverpobreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BFA9851AFD0B5800898E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21BFA9861AFD0B5800898E8E /* EverpobreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverpobreTests.m; sourceTree = "<group>"; };
+		21BFA9901AFD0FC200898E8E /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		21BFA9911AFD0FC200898E8E /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 				21BFA96C1AFD0B5800898E8E /* AppDelegate.m */,
 				21BFA9711AFD0B5800898E8E /* ViewController.h */,
 				21BFA9721AFD0B5800898E8E /* ViewController.m */,
+				21BFA9931AFD0FD300898E8E /* Model */,
 				21BFA9741AFD0B5800898E8E /* Main.storyboard */,
 				21BFA9771AFD0B5800898E8E /* Images.xcassets */,
 				21BFA9791AFD0B5800898E8E /* LaunchScreen.xib */,
@@ -120,6 +124,15 @@
 				21BFA9851AFD0B5800898E8E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21BFA9931AFD0FD300898E8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21BFA9901AFD0FC200898E8E /* Note.h */,
+				21BFA9911AFD0FC200898E8E /* Note.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BFA9921AFD0FC200898E8E /* Note.m in Sources */,
 				21BFA96D1AFD0B5800898E8E /* AppDelegate.m in Sources */,
 				21BFA96A1AFD0B5800898E8E /* main.m in Sources */,
 				21BFA9731AFD0B5800898E8E /* ViewController.m in Sources */,

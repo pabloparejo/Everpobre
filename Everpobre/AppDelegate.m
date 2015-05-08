@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Note.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    Note *nota1 = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+    
+    nota1.title = @"Shopping List";
+    nota1.text = @"One thing of this, another of that";
+    nota1.creationDate = [NSDate date];
+    NSLog(@"Note: %@", nota1);
+    
+    [self saveContext];
+    
     return YES;
 }
 
