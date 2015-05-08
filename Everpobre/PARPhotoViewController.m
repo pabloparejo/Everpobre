@@ -24,6 +24,15 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)takePhoto:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.allowsEditing = NO;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+    
+}
+
+-(UIStatusBarStyle) preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 /*

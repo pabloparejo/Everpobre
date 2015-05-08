@@ -8,7 +8,7 @@
 
 #import "PARNotesViewController.h"
 #import "Note.h"
-
+#import "PARNoteViewController.h"
 #define CELL_ID @"NoteCell"
 @interface PARNotesViewController ()
 
@@ -41,5 +41,13 @@
     
     cell.detailTextLabel.text = [dateFormatter stringFromDate:note.creationDate];
     return cell;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    PARNoteViewController *noteVC = (PARNoteViewController *) segue.destinationViewController;
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    Note *selectedNote = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
+
+    [noteVC setNote:selectedNote];
 }
 @end

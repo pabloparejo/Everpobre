@@ -19,6 +19,7 @@
 		21BFA99A1AFD216800898E8E /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA9991AFD216800898E8E /* CoreDataTableViewController.m */; };
 		21BFA99D1AFD319A00898E8E /* PARNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA99C1AFD319A00898E8E /* PARNoteViewController.m */; };
 		21BFA9A01AFD34B300898E8E /* PARPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BFA99F1AFD34B300898E8E /* PARPhotoViewController.m */; };
+		21BFA9A21AFD3C2700898E8E /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21BFA9A11AFD3C2700898E8E /* placeholder.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		21BFA99C1AFD319A00898E8E /* PARNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNoteViewController.m; sourceTree = "<group>"; };
 		21BFA99E1AFD34B300898E8E /* PARPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARPhotoViewController.h; sourceTree = "<group>"; };
 		21BFA99F1AFD34B300898E8E /* PARPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARPhotoViewController.m; sourceTree = "<group>"; };
+		21BFA9A11AFD3C2700898E8E /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		21BFA9661AFD0B5800898E8E /* Everpobre */ = {
 			isa = PBXGroup;
 			children = (
+				21BFA9A11AFD3C2700898E8E /* placeholder.jpg */,
 				21BFA96B1AFD0B5800898E8E /* AppDelegate.h */,
 				21BFA96C1AFD0B5800898E8E /* AppDelegate.m */,
 				21BFA9981AFD216800898E8E /* CoreDataTableViewController.h */,
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21BFA9761AFD0B5800898E8E /* Main.storyboard in Resources */,
+				21BFA9A21AFD3C2700898E8E /* placeholder.jpg in Resources */,
 				21BFA97B1AFD0B5800898E8E /* LaunchScreen.xib in Resources */,
 				21BFA9781AFD0B5800898E8E /* Images.xcassets in Resources */,
 			);

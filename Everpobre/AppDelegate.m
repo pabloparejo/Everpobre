@@ -21,6 +21,9 @@
     
     PARNotesViewController *notesVC = [((UINavigationController *)self.window.rootViewController).viewControllers firstObject];
     
+    [Note noteWithContext:self.managedObjectContext title:@"title" text:@"a very short text"];
+    
+    
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(Note.class)];
     request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO]];
     

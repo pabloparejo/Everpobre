@@ -22,6 +22,22 @@
     
     // Delete textView padding
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.textField.layer.borderColor = [UIColor colorWithWhite:0 alpha:0.15].CGColor;
+    self.textField.layer.borderWidth = .5f;
+    self.textField.layer.cornerRadius = 5.0f;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.titleField.text = self.note.title;
+    self.textField.text = self.note.text;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.note.title = self.titleField.text;
+    self.note.text = self.textField.text;
 }
 
 - (void)didReceiveMemoryWarning {
