@@ -23,10 +23,24 @@
     
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(Note.class)];
     request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO]];
+    
+    request.predicate = [NSPredicate predicateWithFormat:@"title == %@", @"Second Note"];
+    
+    NSArray *notes = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    [notes enumerateObjectsUsingBlock:^(Note *obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"%@, %@", obj.title, obj);
+        [self.managedObjectContext deleteObject:obj];
+    }];
+    
+    [self saveContext];
+    
     notesVC.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                            managedObjectContext:self.managedObjectContext
                                                                              sectionNameKeyPath:nil
                                                                                       cacheName:nil];
+    
+    
     
     return YES;
 }
