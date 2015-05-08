@@ -25,16 +25,17 @@
     nota1.text = @"One thing of this, another of that";
     nota1.creationDate = [NSDate date];*/
     
-    [Note noteWithContext:self.managedObjectContext title:@"Second Note" text:@"Niiiiice!"];
-    [self saveContext];
+    // [Note noteWithContext:self.managedObjectContext title:@"Second Note" text:@"Niiiiice!"];
+    // [self saveContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
+    
+    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO]];
     
     NSArray *notes = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     NSLog(@"Array Notes is: %@", [notes class]);
     
     [notes enumerateObjectsUsingBlock:^(Note *note, NSUInteger idx, BOOL *stop) {
-        
         NSLog(@"The title is: '%@' and the note: %@", note.title, note);
     }];
     
