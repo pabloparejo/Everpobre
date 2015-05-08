@@ -25,7 +25,7 @@
     nota1.text = @"One thing of this, another of that";
     nota1.creationDate = [NSDate date];*/
     
-    Note *nota2 = [Note noteWithContext:self.managedObjectContext title:@"Second Note" text:@"Niiiiice!"];
+    [Note noteWithContext:self.managedObjectContext title:@"Second Note" text:@"Niiiiice!"];
     [self saveContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
     
