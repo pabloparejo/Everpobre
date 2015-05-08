@@ -30,7 +30,8 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
     
     request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO]];
-    
+    request.predicate = [NSPredicate predicateWithFormat:@"creationDate < %@", [NSDate date]];
+
     NSArray *notes = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     NSLog(@"Array Notes is: %@", [notes class]);
