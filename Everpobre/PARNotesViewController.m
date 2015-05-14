@@ -9,7 +9,12 @@
 #import "PARNotesViewController.h"
 #import "Note.h"
 #import "PARNoteViewController.h"
+#import "AppDelegate.h"
 #define CELL_ID @"NoteCell"
+
+#define SEGUE_PRESENT_NOTE @"SHOW_NOTE"
+#define SEGUE_NEW_NOTE @"NEW_NOTE"
+
 @interface PARNotesViewController ()
 
 @end
@@ -44,10 +49,19 @@
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    PARNoteViewController *noteVC = (PARNoteViewController *) segue.destinationViewController;
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    Note *selectedNote = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
+    if ([segue.identifier isEqualToString:SEGUE_PRESENT_NOTE]) {
+        PARNoteViewController *noteVC = (PARNoteViewController *) segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        Note *selectedNote = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
+        
+        [noteVC setNote:selectedNote];
+    }else if([segue.identifier isEqualToString:SEGUE_NEW_NOTE]){
+        PARNoteViewController *noteVC = (PARNoteViewController *) segue.destinationViewController;
+        AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        Note *newNote = [Note noteWithContext:appDelegate.managedObjectContext title:@"" text:@""];
 
-    [noteVC setNote:selectedNote];
+        [noteVC setNote:newNote];
+    }
 }
+
 @end

@@ -46,7 +46,7 @@
 }
 
 -(IBAction)goBackFromPhoto:(UIStoryboardSegue *)segue{
-    
+    [segue.destinationViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 

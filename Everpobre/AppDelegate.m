@@ -27,7 +27,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(Note.class)];
     request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO]];
     
-    [self saveContext];
+    // [self saveContext];
     
     notesVC.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                            managedObjectContext:self.managedObjectContext

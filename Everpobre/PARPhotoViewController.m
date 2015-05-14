@@ -25,7 +25,11 @@
 }
 - (IBAction)takePhoto:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }else{
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
     imagePicker.allowsEditing = NO;
     [self presentViewController:imagePicker animated:YES completion:nil];
     

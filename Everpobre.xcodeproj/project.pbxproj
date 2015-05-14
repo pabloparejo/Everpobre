@@ -153,10 +153,10 @@
 			children = (
 				21BFA99B1AFD319A00898E8E /* PARNoteViewController.h */,
 				21BFA99C1AFD319A00898E8E /* PARNoteViewController.m */,
-				21BFA9941AFD213700898E8E /* PARNotesViewController.h */,
-				21BFA9951AFD213700898E8E /* PARNotesViewController.m */,
 				21BFA99E1AFD34B300898E8E /* PARPhotoViewController.h */,
 				21BFA99F1AFD34B300898E8E /* PARPhotoViewController.m */,
+				21BFA9941AFD213700898E8E /* PARNotesViewController.h */,
+				21BFA9951AFD213700898E8E /* PARNotesViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -462,6 +462,7 @@
 				21BFA98C1AFD0B5800898E8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21BFA98D1AFD0B5800898E8E /* Build configuration list for PBXNativeTarget "EverpobreTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +471,7 @@
 				21BFA98F1AFD0B5800898E8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
