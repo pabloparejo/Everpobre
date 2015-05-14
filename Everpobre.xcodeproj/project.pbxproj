@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		217ECBE51B0536EF00514F70 /* Everpobre 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Everpobre 2.xcdatamodel"; sourceTree = "<group>"; };
 		21BFA9641AFD0B5800898E8E /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BFA9681AFD0B5800898E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21BFA9691AFD0B5800898E8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -479,9 +480,10 @@
 		21BFA96E1AFD0B5800898E8E /* Everpobre.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				217ECBE51B0536EF00514F70 /* Everpobre 2.xcdatamodel */,
 				21BFA96F1AFD0B5800898E8E /* Everpobre.xcdatamodel */,
 			);
-			currentVersion = 21BFA96F1AFD0B5800898E8E /* Everpobre.xcdatamodel */;
+			currentVersion = 217ECBE51B0536EF00514F70 /* Everpobre 2.xcdatamodel */;
 			path = Everpobre.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

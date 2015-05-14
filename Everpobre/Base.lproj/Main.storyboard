@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" title="Everpobre" id="ecl-ZV-7da">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cUU-qc-2gd">
                             <connections>
-                                <segue destination="o2I-Yv-MGL" kind="show" identifier="ADD_NOTE" id="YUX-x2-v39"/>
+                                <segue destination="o2I-Yv-MGL" kind="show" identifier="NEW_NOTE" id="YUX-x2-v39"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,10 +143,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="9q2-rR-4J0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmr-ZW-ZDi">
-                                <rect key="frame" x="304" y="435" width="135" height="30"/>
+                                <rect key="frame" x="304" y="480" width="135" height="30"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.94762541119999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="w8D-uC-2ux"/>
@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zN-vb-W7O">
-                                <rect key="frame" x="161" y="435" width="135" height="30"/>
+                                <rect key="frame" x="161" y="480" width="135" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.029999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="0.70588235290000001" green="0.94762541119999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -192,7 +192,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9q2-rR-4J0" secondAttribute="trailing" constant="-16" id="8E4-0a-lyn"/>
                             <constraint firstItem="fmr-ZW-ZDi" firstAttribute="centerY" secondItem="9q2-rR-4J0" secondAttribute="centerY" constant="271" id="EOe-Hc-DUc"/>
                             <constraint firstItem="9q2-rR-4J0" firstAttribute="leading" secondItem="2GZ-zY-oiQ" secondAttribute="leadingMargin" constant="-16" id="I9P-mR-RY0"/>
-                            <constraint firstItem="9q2-rR-4J0" firstAttribute="bottom" secondItem="2GZ-zY-oiQ" secondAttribute="centerY" multiplier="1.25" id="ORM-Hh-qoi"/>
+                            <constraint firstItem="9q2-rR-4J0" firstAttribute="bottom" secondItem="2GZ-zY-oiQ" secondAttribute="centerY" multiplier="1.4" id="ORM-Hh-qoi"/>
                             <constraint firstItem="9q2-rR-4J0" firstAttribute="top" secondItem="vpH-7S-cTY" secondAttribute="top" constant="-20" id="SQI-0I-gen"/>
                             <constraint firstItem="W98-cL-7BZ" firstAttribute="bottom" secondItem="2GZ-zY-oiQ" secondAttribute="bottomMargin" id="TRM-m6-C9c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="W98-cL-7BZ" secondAttribute="trailing" constant="-16" id="VN4-xa-RYT"/>

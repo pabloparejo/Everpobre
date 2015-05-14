@@ -6,16 +6,13 @@
 //  Copyright (c) 2015 Pablo Parejo Camacho. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+
+#import "_Note.h"
+@import Foundation;
+@import CoreData;
 
 
-@interface Note : NSManagedObject
-
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSData * photo;
-@property (nonatomic, retain) NSString * text;
-@property (nonatomic, retain) NSDate * creationDate;
+@interface Note : _Note
 
 + (instancetype) noteWithContext:(NSManagedObjectContext *)context title:(NSString *)title text:(NSString *)text;
 

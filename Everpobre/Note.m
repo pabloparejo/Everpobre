@@ -11,11 +11,6 @@
 
 @implementation Note
 
-@dynamic title;
-@dynamic photo;
-@dynamic text;
-@dynamic creationDate;
-
 + (instancetype) noteWithContext:(NSManagedObjectContext *)context title:(NSString *)title text:(NSString *)text{
     Note *note = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self.class) inManagedObjectContext:context];
     

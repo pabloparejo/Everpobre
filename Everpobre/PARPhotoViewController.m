@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     if (self.note.photo != nil) {
-        self.photoView.image = [UIImage imageWithData:self.note.photo];
+        self.photoView.image = self.note.photo;
     }
 }
 
@@ -49,7 +49,7 @@
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     self.photoView.image = image;
-    self.note.photo = UIImageJPEGRepresentation(image, 1);
+    self.note.photo = image;
     [picker dismissViewControllerAnimated:YES completion:nil];
     
 }
