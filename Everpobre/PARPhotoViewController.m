@@ -8,7 +8,8 @@
 
 #import "PARPhotoViewController.h"
 
-@interface PARPhotoViewController ()
+@interface PARPhotoViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *photoView;
 
 @end
 
@@ -16,7 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if (self.note.photo != nil) {
+        self.photoView.image = [UIImage imageWithData:self.note.photo];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,6 +35,7 @@
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     imagePicker.allowsEditing = NO;
+    imagePicker.delegate = self;
     [self presentViewController:imagePicker animated:YES completion:nil];
     
 }
@@ -39,14 +44,26 @@
     return UIStatusBarStyleLightContent;
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UIImagePickerControllerDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.photoView.image = image;
+    self.note.photo = UIImageJPEGRepresentation(image, 1);
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
 }
-*/
+
+- (IBAction)deleteImage:(id)sender {
+    [UIView animateWithDuration:1 animations:^{
+        self.photoView.frame = CGRectMake(self.view.frame.size.width, self.view.frame.size.height, 0, 0);
+        self.photoView.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.photoView.image = [UIImage imageNamed:@"placeholder"];
+        self.photoView.transform = CGAffineTransformIdentity;
+        self.photoView.alpha = 1;
+        [self.view layoutIfNeeded];
+    }];
+}
 
 @end

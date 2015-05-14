@@ -7,6 +7,9 @@
 //
 
 #import "PARNoteViewController.h"
+#import "PARPhotoViewController.h"
+
+#define VIEW_PHOTO_SEGUE @"VIEW_PHOTO"
 
 @interface PARNoteViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
@@ -32,6 +35,9 @@
     [super viewWillAppear:animated];
     self.titleField.text = self.note.title;
     self.textField.text = self.note.text;
+    if (self.note.photo != nil) {
+        self.imageView.image = [UIImage imageWithData:self.note.photo];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -46,18 +52,15 @@
 }
 
 -(IBAction)goBackFromPhoto:(UIStoryboardSegue *)segue{
-    [segue.destinationViewController dismissViewControllerAnimated:YES completion:nil];
+    [segue.sourceViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:VIEW_PHOTO_SEGUE]) {
+        PARPhotoViewController *photoVC = (PARPhotoViewController *) segue.destinationViewController;
+        photoVC.note = self.note;
+    }
 }
-*/
 
 @end

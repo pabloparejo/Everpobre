@@ -9,8 +9,10 @@
 #import "AppDelegate.h"
 #import "Note.h"
 #import "PARNotesViewController.h"
-@interface AppDelegate ()
 
+#define SAVE_RATE 10
+@interface AppDelegate ()
+@property (nonatomic) BOOL autosave;
 @end
 
 @implementation AppDelegate
@@ -20,8 +22,6 @@
     // Override point for customization after application launch.
     
     PARNotesViewController *notesVC = [((UINavigationController *)self.window.rootViewController).viewControllers firstObject];
-    
-    [Note noteWithContext:self.managedObjectContext title:@"title" text:@"a very short text"];
     
     
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(Note.class)];
@@ -34,7 +34,9 @@
                                                                              sectionNameKeyPath:nil
                                                                                       cacheName:nil];
     
+    self.autosave = true;
     
+    [self performSelector:@selector(saveContext) withObject:nil afterDelay:SAVE_RATE];
     
     return YES;
 }
@@ -45,12 +47,11 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    self.autosave = NO;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [self performSelector:@selector(saveContext) withObject:nil afterDelay:SAVE_RATE];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -141,6 +142,10 @@
             abort();
         }
     }
+    if (self.autosave) {
+        [self performSelector:@selector(saveContext) withObject:nil afterDelay:SAVE_RATE];
+    }
+
 }
 
 @end

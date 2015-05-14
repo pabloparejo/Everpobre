@@ -87,12 +87,12 @@
                                     <barButtonItem systemItem="camera" id="RYx-Pv-tl4">
                                         <connections>
                                             <action selector="takePhoto:" destination="o2I-Yv-MGL" id="HdL-AA-sYm"/>
-                                            <segue destination="3Rz-8Z-0n3" kind="presentation" modalPresentationStyle="pageSheet" id="1ea-TI-8R7"/>
+                                            <segue destination="3Rz-8Z-0n3" kind="presentation" identifier="VIEW_PHOTO" id="1ea-TI-8R7"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="INe-8q-jiL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="INe-8q-jiL">
                                 <rect key="frame" x="0.0" y="64" width="600" height="190"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="text" translatesAutoresizingMaskIntoConstraints="NO" id="hcI-48-LAQ">
@@ -142,11 +142,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="9q2-rR-4J0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="9q2-rR-4J0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="375"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmr-ZW-ZDi">
-                                <rect key="frame" x="304" y="480" width="135" height="30"/>
+                                <rect key="frame" x="304" y="435" width="135" height="30"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.94762541119999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="w8D-uC-2ux"/>
@@ -160,9 +160,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zN-vb-W7O">
-                                <rect key="frame" x="161" y="480" width="135" height="30"/>
+                                <rect key="frame" x="161" y="435" width="135" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.029999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Done">
                                     <color key="titleColor" red="0.70588235290000001" green="0.94762541119999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.70588235290000001" green="0.94762541119999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -170,6 +170,20 @@
                                     <segue destination="Qde-IQ-LCv" kind="unwind" unwindAction="goBackFromPhoto:" id="xdX-fx-2Bz"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W98-cL-7BZ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cba-cS-Qqz"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PYU-06-wic"/>
+                                    <barButtonItem systemItem="trash" id="8qq-X1-mlf">
+                                        <connections>
+                                            <action selector="deleteImage:" destination="3Rz-8Z-0n3" id="1Jz-4c-8Pm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -178,19 +192,32 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9q2-rR-4J0" secondAttribute="trailing" constant="-16" id="8E4-0a-lyn"/>
                             <constraint firstItem="fmr-ZW-ZDi" firstAttribute="centerY" secondItem="9q2-rR-4J0" secondAttribute="centerY" constant="271" id="EOe-Hc-DUc"/>
                             <constraint firstItem="9q2-rR-4J0" firstAttribute="leading" secondItem="2GZ-zY-oiQ" secondAttribute="leadingMargin" constant="-16" id="I9P-mR-RY0"/>
-                            <constraint firstItem="9q2-rR-4J0" firstAttribute="bottom" secondItem="2GZ-zY-oiQ" secondAttribute="centerY" multiplier="1.4" id="ORM-Hh-qoi"/>
-                            <constraint firstItem="9q2-rR-4J0" firstAttribute="top" secondItem="vpH-7S-cTY" secondAttribute="top" id="SQI-0I-gen"/>
+                            <constraint firstItem="9q2-rR-4J0" firstAttribute="bottom" secondItem="2GZ-zY-oiQ" secondAttribute="centerY" multiplier="1.25" id="ORM-Hh-qoi"/>
+                            <constraint firstItem="9q2-rR-4J0" firstAttribute="top" secondItem="vpH-7S-cTY" secondAttribute="top" constant="-20" id="SQI-0I-gen"/>
+                            <constraint firstItem="W98-cL-7BZ" firstAttribute="bottom" secondItem="2GZ-zY-oiQ" secondAttribute="bottomMargin" id="TRM-m6-C9c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W98-cL-7BZ" secondAttribute="trailing" constant="-16" id="VN4-xa-RYT"/>
                             <constraint firstItem="fmr-ZW-ZDi" firstAttribute="leading" secondItem="9q2-rR-4J0" secondAttribute="centerX" constant="4" id="hP7-8e-vgM"/>
                             <constraint firstItem="8zN-vb-W7O" firstAttribute="height" secondItem="fmr-ZW-ZDi" secondAttribute="height" id="oGc-sC-1xn"/>
                             <constraint firstItem="fmr-ZW-ZDi" firstAttribute="top" secondItem="9q2-rR-4J0" secondAttribute="bottom" constant="60" id="qDm-bO-YEA"/>
+                            <constraint firstItem="W98-cL-7BZ" firstAttribute="bottom" secondItem="2GZ-zY-oiQ" secondAttribute="bottomMargin" id="qDs-GW-O4h"/>
+                            <constraint firstItem="RPs-oG-kz1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fmr-ZW-ZDi" secondAttribute="bottom" constant="40" id="qb3-SK-EwP"/>
                             <constraint firstItem="8zN-vb-W7O" firstAttribute="width" secondItem="fmr-ZW-ZDi" secondAttribute="width" id="tyD-XO-PMA"/>
+                            <constraint firstItem="W98-cL-7BZ" firstAttribute="leading" secondItem="2GZ-zY-oiQ" secondAttribute="leadingMargin" constant="-16" id="vQm-cx-UaZ"/>
+                            <constraint firstItem="8zN-vb-W7O" firstAttribute="topMargin" secondItem="W98-cL-7BZ" secondAttribute="bottom" id="wyD-SH-nU9"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="wyD-SH-nU9"/>
                                 <exclude reference="EOe-Hc-DUc"/>
+                                <exclude reference="qDs-GW-O4h"/>
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="photoView" destination="9q2-rR-4J0" id="JOr-Hd-jEB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nm8-PZ-VFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qde-IQ-LCv" userLabel="Exit" sceneMemberID="exit"/>

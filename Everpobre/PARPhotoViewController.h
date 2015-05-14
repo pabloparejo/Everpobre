@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 Pablo Parejo Camacho. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+#import "Note.h"
 
-@interface PARPhotoViewController : UIViewController
+@interface PARPhotoViewController : UIViewController 
+
+@property (strong, nonatomic) Note *note;
 
 @end
