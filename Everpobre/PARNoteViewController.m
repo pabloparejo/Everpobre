@@ -11,7 +11,7 @@
 
 #define VIEW_PHOTO_SEGUE @"VIEW_PHOTO"
 
-@interface PARNoteViewController ()
+@interface PARNoteViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *textField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -32,6 +32,8 @@
     self.textField.layer.cornerRadius = 5.0f;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    self.titleField.delegate = self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -87,6 +89,13 @@
 
 - (void) hideKeyboard{
     [self.view endEditing:YES];
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    self.note.title = textField.text;
+    // here we get the text without last typped char.
+    return YES;
 }
 
 @end
