@@ -8,6 +8,12 @@ extern const struct NotebookAttributes {
 	__unsafe_unretained NSString *title;
 } NotebookAttributes;
 
+extern const struct NotebookRelationships {
+	__unsafe_unretained NSString *notes;
+} NotebookRelationships;
+
+@class Note;
+
 @interface NotebookID : NSManagedObjectID {}
 @end
 
@@ -25,6 +31,18 @@ extern const struct NotebookAttributes {
 
 //- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSSet *notes;
+
+- (NSMutableSet*)notesSet;
+
+@end
+
+@interface _Notebook (NotesCoreDataGeneratedAccessors)
+- (void)addNotes:(NSSet*)value_;
+- (void)removeNotes:(NSSet*)value_;
+- (void)addNotesObject:(Note*)value_;
+- (void)removeNotesObject:(Note*)value_;
+
 @end
 
 @interface _Notebook (CoreDataGeneratedPrimitiveAccessors)
@@ -34,5 +52,8 @@ extern const struct NotebookAttributes {
 
 - (NSString*)primitiveTitle;
 - (void)setPrimitiveTitle:(NSString*)value;
+
+- (NSMutableSet*)primitiveNotes;
+- (void)setPrimitiveNotes:(NSMutableSet*)value;
 
 @end

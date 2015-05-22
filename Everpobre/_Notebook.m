@@ -8,6 +8,10 @@ const struct NotebookAttributes NotebookAttributes = {
 	.title = @"title",
 };
 
+const struct NotebookRelationships NotebookRelationships = {
+	.notes = @"notes",
+};
+
 @implementation NotebookID
 @end
 
@@ -40,6 +44,17 @@ const struct NotebookAttributes NotebookAttributes = {
 @dynamic creationDate;
 
 @dynamic title;
+
+@dynamic notes;
+
+- (NSMutableSet*)notesSet {
+	[self willAccessValueForKey:@"notes"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"notes"];
+
+	[self didAccessValueForKey:@"notes"];
+	return result;
+}
 
 @end
 

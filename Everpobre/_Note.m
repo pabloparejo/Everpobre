@@ -10,6 +10,10 @@ const struct NoteAttributes NoteAttributes = {
 	.title = @"title",
 };
 
+const struct NoteRelationships NoteRelationships = {
+	.notebook = @"notebook",
+};
+
 @implementation NoteID
 @end
 
@@ -46,6 +50,8 @@ const struct NoteAttributes NoteAttributes = {
 @dynamic text;
 
 @dynamic title;
+
+@dynamic notebook;
 
 @end
 
