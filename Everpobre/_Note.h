@@ -10,8 +10,6 @@ extern const struct NoteAttributes {
 	__unsafe_unretained NSString *title;
 } NoteAttributes;
 
-@class NSObject;
-
 @interface NoteID : NSManagedObjectID {}
 @end
 
@@ -25,7 +23,7 @@ extern const struct NoteAttributes {
 
 //- (BOOL)validateCreationDate:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) id photo;
+@property (nonatomic, strong) NSData* photo;
 
 //- (BOOL)validatePhoto:(id*)value_ error:(NSError**)error_;
 
@@ -44,8 +42,8 @@ extern const struct NoteAttributes {
 - (NSDate*)primitiveCreationDate;
 - (void)setPrimitiveCreationDate:(NSDate*)value;
 
-- (id)primitivePhoto;
-- (void)setPrimitivePhoto:(id)value;
+- (NSData*)primitivePhoto;
+- (void)setPrimitivePhoto:(NSData*)value;
 
 - (NSString*)primitiveText;
 - (void)setPrimitiveText:(NSString*)value;

@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "Note.h"
-#import "PARNotesViewController.h"
+#import "Notebook.h"
+#import "PARNotebookViewController.h"
 
 #define SAVE_RATE 10
 @interface AppDelegate ()
@@ -21,19 +21,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    PARNotesViewController *notesVC = [((UINavigationController *)self.window.rootViewController).viewControllers firstObject];
+    PARNotebookViewController *notebooksVC = [((UINavigationController *)self.window.rootViewController).viewControllers firstObject];
     
     
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(Note.class)];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass(Notebook.class)];
     request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO]];
     
     // [self saveContext];
     
-    notesVC.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                           managedObjectContext:self.managedObjectContext
-                                                                             sectionNameKeyPath:nil
-                                                                                      cacheName:nil];
-    
+    notebooksVC.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                               managedObjectContext:self.managedObjectContext
+                                                                                 sectionNameKeyPath:nil
+                                                                                          cacheName:nil];
     self.autosave = true;
     
     [self performSelector:@selector(saveContext) withObject:nil afterDelay:SAVE_RATE];

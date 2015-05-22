@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Pablo Parejo Camacho. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+#import "CoreDataTableViewController.h"
 
-@interface PARNotebookViewController : UITableViewController
+@interface PARNotebookViewController : CoreDataTableViewController
 
 @end
