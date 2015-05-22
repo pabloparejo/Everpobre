@@ -65,14 +65,21 @@
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         Note *selectedNote = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
         
+        [selectedNote addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
+        
         [noteVC setNote:selectedNote];
     }else if([segue.identifier isEqualToString:SEGUE_NEW_NOTE]){
         PARNoteViewController *noteVC = (PARNoteViewController *) segue.destinationViewController;
         AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
         Note *newNote = [Note noteWithContext:appDelegate.managedObjectContext title:@"" text:@""];
         newNote.notebook = self.notebook;
-
         [noteVC setNote:newNote];
+    }
+}
+
+-(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath  isEqual: @"title"]) {
+        NSLog(@"Han modificado el valor %@", [change objectForKey:NSKeyValueChangeNewKey]);
     }
 }
 
