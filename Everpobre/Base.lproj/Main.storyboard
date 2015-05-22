@@ -104,11 +104,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="X61-CI-hIS" firstAttribute="top" secondItem="hcI-48-LAQ" secondAttribute="bottom" priority="900" constant="52" id="8pm-Va-KJW"/>
                             <constraint firstItem="INe-8q-jiL" firstAttribute="leading" secondItem="fPu-ZM-I5x" secondAttribute="leadingMargin" constant="-16" id="H5q-oc-4Zb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xgg-8b-MYk" secondAttribute="trailing" constant="-16" id="K1d-mI-kPQ"/>
                             <constraint firstItem="hcI-48-LAQ" firstAttribute="leading" secondItem="fPu-ZM-I5x" secondAttribute="leadingMargin" id="QL8-jQ-Itp"/>
                             <constraint firstItem="INe-8q-jiL" firstAttribute="top" secondItem="EZd-qy-1ba" secondAttribute="bottom" id="TAG-pe-sSa"/>
-                            <constraint firstItem="Xgg-8b-MYk" firstAttribute="top" secondItem="hcI-48-LAQ" secondAttribute="bottom" constant="8" id="UCO-bZ-x13"/>
+                            <constraint firstItem="Xgg-8b-MYk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hcI-48-LAQ" secondAttribute="bottom" constant="8" id="UCO-bZ-x13"/>
                             <constraint firstItem="hcI-48-LAQ" firstAttribute="trailing" secondItem="fPu-ZM-I5x" secondAttribute="trailingMargin" id="V5k-QR-XBr"/>
                             <constraint firstItem="8g5-vF-Avn" firstAttribute="trailing" secondItem="fPu-ZM-I5x" secondAttribute="trailingMargin" id="WdF-Ld-i6g"/>
                             <constraint firstItem="8g5-vF-Avn" firstAttribute="leading" secondItem="fPu-ZM-I5x" secondAttribute="leadingMargin" id="adO-nP-lfr"/>
@@ -121,6 +122,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="8pm-Va-KJW" id="z7v-dg-SBr"/>
                         <outlet property="imageView" destination="INe-8q-jiL" id="R75-x7-NB3"/>
                         <outlet property="textField" destination="hcI-48-LAQ" id="9Xt-UH-KNF"/>
                         <outlet property="titleField" destination="8g5-vF-Avn" id="J6v-iq-RYh"/>
@@ -268,6 +270,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="w5t-Ja-cr7" kind="show" identifier="SHOW_NOTES" id="Lg7-nt-4HE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

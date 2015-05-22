@@ -43,6 +43,7 @@
 		21378A041B0F7A1B000A0002 /* Notebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notebook.m; sourceTree = "<group>"; };
 		21378A091B0F7CB6000A0002 /* PARNotebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARNotebookViewController.h; sourceTree = "<group>"; };
 		21378A0A1B0F7CB6000A0002 /* PARNotebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARNotebookViewController.m; sourceTree = "<group>"; };
+		21378A0C1B0F8DC1000A0002 /* Everpobre 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Everpobre 3.xcdatamodel"; sourceTree = "<group>"; };
 		217ECBE51B0536EF00514F70 /* Everpobre 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Everpobre 2.xcdatamodel"; sourceTree = "<group>"; };
 		218955851B0F766F0066750B /* _Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Note.h; sourceTree = "<group>"; };
 		218955861B0F766F0066750B /* _Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Note.m; sourceTree = "<group>"; };
@@ -504,10 +505,11 @@
 		21BFA96E1AFD0B5800898E8E /* Everpobre.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				21378A0C1B0F8DC1000A0002 /* Everpobre 3.xcdatamodel */,
 				217ECBE51B0536EF00514F70 /* Everpobre 2.xcdatamodel */,
 				21BFA96F1AFD0B5800898E8E /* Everpobre.xcdatamodel */,
 			);
-			currentVersion = 217ECBE51B0536EF00514F70 /* Everpobre 2.xcdatamodel */;
+			currentVersion = 21378A0C1B0F8DC1000A0002 /* Everpobre 3.xcdatamodel */;
 			path = Everpobre.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

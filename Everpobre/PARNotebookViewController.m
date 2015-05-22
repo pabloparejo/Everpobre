@@ -7,9 +7,11 @@
 //
 
 #import "PARNotebookViewController.h"
+#import "PARNotesViewController.h"
 #import "Notebook.h"
 
 #define CELL_ID @"NOTEBOOK_CELL"
+#define DID_SELECT_ROW @"SHOW_NOTES"
 
 @interface PARNotebookViewController ()
 
@@ -38,10 +40,7 @@
     Notebook *notebook = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = notebook.title;
     
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    
-    cell.detailTextLabel.text = [dateFormatter stringFromDate:notebook.creationDate];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Contains %d notes", notebook.notes.count];
     return cell;
 }
 - (IBAction)newNotebook:(id)sender {
@@ -64,6 +63,15 @@
     }];
     
     [self presentViewController:notebookDialog animated:YES completion:nil];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:DID_SELECT_ROW]) {
+        PARNotesViewController *vc = (PARNotesViewController *)segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        Notebook *selectedNotebook = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
+        [vc setNotebook:selectedNotebook];
+    }
 }
 
 @end

@@ -8,7 +8,9 @@
 
 @import UIKit;
 #import "CoreDataTableViewController.h"
-
+#import "Notebook.h"
 @interface PARNotesViewController : CoreDataTableViewController
+
+@property (strong, nonatomic) Notebook *notebook;
 
 @end

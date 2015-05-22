@@ -36,6 +36,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)setNotebook:(Notebook *)notebook{
+    _notebook = notebook;
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([Note class])];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
+    request.predicate = [NSPredicate predicateWithFormat:@"notebook = %@", notebook];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:appDelegate.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+}
+
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
     Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -59,6 +70,7 @@
         PARNoteViewController *noteVC = (PARNoteViewController *) segue.destinationViewController;
         AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
         Note *newNote = [Note noteWithContext:appDelegate.managedObjectContext title:@"" text:@""];
+        newNote.notebook = self.notebook;
 
         [noteVC setNote:newNote];
     }
