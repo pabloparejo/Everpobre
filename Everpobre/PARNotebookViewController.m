@@ -8,7 +8,6 @@
 
 #import "PARNotebookViewController.h"
 #import "Notebook.h"
-#import "AppDelegate.h"
 
 #define CELL_ID @"NOTEBOOK_CELL"
 
@@ -46,8 +45,25 @@
     return cell;
 }
 - (IBAction)newNotebook:(id)sender {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
-    [Notebook notebookWithContext:[appDelegate managedObjectContext] title:@"New Notebook"];
+    
+    UIAlertController *notebookDialog = [UIAlertController alertControllerWithTitle:@"New Notebook"
+                                                                            message:@"Please, insert notebook name"
+                                                                     preferredStyle:UIAlertControllerStyleAlert];
+    
+    [notebookDialog addAction:[UIAlertAction actionWithTitle:@"Create" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UITextField *titleTextField = notebookDialog.textFields.firstObject;
+        [Notebook notebookWithContext:self.fetchedResultsController.managedObjectContext title:titleTextField.text];
+    }]];
+
+    [notebookDialog addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        [notebookDialog dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    
+    [notebookDialog addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Notebook name";
+    }];
+    
+    [self presentViewController:notebookDialog animated:YES completion:nil];
 }
 
 @end
